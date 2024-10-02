@@ -4,5 +4,7 @@ metadata:
   name: "{{ include "config-map-test.fullname" . }}-configmap"
   labels:
     {{- include "config-map-test.labels" . | nindent 4 }}
+  annotations:
+    argocd.argoproj.io/compare-options: IgnoreExtraneous
 data:
   NEED_TO_RUN_MIGRATION: "true"
